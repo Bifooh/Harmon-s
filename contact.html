@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- REPLACE: Update with your real business name -->
+  <title>Request Service | Your HVAC Company — Iowa Heating & Air Conditioning</title>
+  <!-- REPLACE: Update with your real meta description -->
+  <meta name="description" content="Request heating or air conditioning service from Your HVAC Company in Iowa. Fill out our simple form and we'll follow up promptly to discuss your HVAC needs." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ----- CONTACT LAYOUT ----- */
+    #contact-main { background: var(--gray-100); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 44px;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr 380px; }
+    }
+
+    /* ----- FORM CARD ----- */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-lg);
+      padding: 38px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 540px) {
+      .form-card { padding: 44px 40px; }
+    }
+
+    .form-card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-card-sub {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .form-section-divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 24px 0;
+    }
+
+    .form-section-label {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+
+    .submit-wrap { margin-top: 26px; }
+
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 15px 24px;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* ----- CONTACT SIDEBAR ----- */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: calc(var(--nav-h) + 20px);
+    }
+
+    .contact-info-card {
+      background: var(--navy);
+      border-radius: var(--r-lg);
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-detail-icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(62,168,74,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-label {
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .contact-detail-value a {
+      color: var(--green-light);
+      transition: color var(--t-fast);
+    }
+
+    .contact-detail-value a:hover { color: var(--white); }
+
+    /* Hours card */
+    .hours-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-md);
+      padding: 22px 22px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .hours-card-title {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 0.86rem;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+
+    .hours-day { color: var(--gray-600); font-family: var(--font-display); font-weight: 600; font-size: 0.82rem; }
+    .hours-time { color: var(--navy); font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; }
+    .hours-closed { color: var(--gray-300); font-size: 0.8rem; }
+
+    /* Trust pills sidebar */
+    .sidebar-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    .sidebar-trust-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ----- FAQ SECTION ----- */
+    #faq { background: var(--cream); }
+
+    .faq-list {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      max-width: 720px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: background var(--t-fast);
+    }
+
+    .faq-trigger:hover { background: var(--gray-50); }
+
+    .faq-item.open .faq-trigger { background: var(--green-faint); }
+
+    .faq-question {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--white);
+      flex-shrink: 0;
+      transition: background var(--t-fast);
+    }
+
+    .faq-item.open .faq-icon { background: var(--green); }
+
+    .faq-body {
+      padding: 0 24px;
+      /* max-height set by JS */
+    }
+
+    .faq-body-inner {
+      padding-bottom: 20px;
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ----- SERVICE AREA CALLOUT ----- */
+    .area-callout {
+      background: var(--navy-faint);
+      border: 1px solid rgba(29,58,102,0.12);
+      border-radius: var(--r-md);
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .area-callout-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+
+    .area-callout-text {
+      font-size: 0.86rem;
+      color: var(--navy-light);
+      line-height: 1.6;
+    }
+
+    .area-callout-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.84rem;
+      margin-bottom: 2px;
+      color: var(--navy);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================================================================
+     HEADER / NAV
+================================================================ -->
+<header class="site-header" id="top">
+  <nav class="nav-inner" aria-label="Main navigation">
+
+    <!-- REPLACE: Swap text/icon with your real logo image -->
+    <a href="index.html" class="nav-logo" aria-label="Your HVAC Company — Home">
+      <span class="nav-logo-mark" aria-hidden="true">❄</span>
+      <span class="nav-logo-text">Your <span>HVAC</span></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" data-page="index">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="contact.html" data-page="contact">Request Service</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <!-- REPLACE: Update with your real phone number -->
+      <a href="tel:+15551234567" class="nav-phone">📞 (555) 123-4567</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </nav>
+</header>
+
+<!-- Mobile drawer -->
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+  <a href="index.html" data-page="index">Home</a>
+  <a href="about.html" data-page="about">About</a>
+  <a href="contact.html" data-page="contact">Request Service</a>
+  <!-- REPLACE: Update with your real phone number -->
+  <a href="tel:+15551234567" class="mobile-drawer-phone">📞 (555) 123-4567</a>
+  <a href="contact.html" class="btn btn-primary mobile-drawer-cta">Request Service</a>
+</nav>
+
+
+<main>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <div class="page-hero">
+    <div class="page-hero-dots" aria-hidden="true"></div>
+    <div class="container page-hero-inner">
+      <p class="page-hero-label">Get in Touch</p>
+      <h1 class="page-hero-title">Request Service</h1>
+      <p class="page-hero-sub">Fill out the form below and we'll follow up to talk through your heating or air conditioning situation. No obligation, just a conversation.</p>
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       CONTACT FORM + SIDEBAR
+       NOTE: This form shows a success message — no data is actually sent.
+       This is a PROTOTYPE only.
+       REPLACE: Connect a real form handler, backend, or email service before launch.
+  ================================================================ -->
+  <section id="contact-main">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- ---- FORM CARD ---- -->
+        <div class="form-card reveal">
+
+          <h2 class="form-card-title">Request Service</h2>
+          <p class="form-card-sub">Tell us a little about your situation and we'll be in touch soon. Fields marked * are required.</p>
+
+          <form id="serviceForm" novalidate>
+
+            <!-- Fields wrapper (hidden on success) -->
+            <div id="formFields">
+
+              <div class="form-section-label">Your Information</div>
+
+              <div class="form-row two">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="form-row two">
+                <div class="form-group">
+                  <!-- REPLACE: Add your phone number to the placeholder/helper if needed -->
+                  <label for="phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567" required autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="city" class="form-label">City *</label>
+                <input type="text" id="city" name="city" class="form-control" placeholder="Your city in Iowa" required autocomplete="address-level2" />
+              </div>
+
+              <hr class="form-section-divider" />
+              <div class="form-section-label">Service Request</div>
+
+              <div class="form-group">
+                <label for="serviceType" class="form-label">Service Needed *</label>
+                <select id="serviceType" name="serviceType" class="form-control" required>
+                  <option value="" disabled selected>Select the service you need…</option>
+                  <option value="heating-repair">Heating Repair</option>
+                  <option value="ac-repair">AC Repair</option>
+                  <option value="heating-replacement">Heating System Replacement</option>
+                  <option value="ac-replacement">AC System Replacement</option>
+                  <option value="maintenance">Preventive Maintenance</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferred Contact Method</label>
+                <div class="radio-group">
+                  <label class="radio-opt"><input type="radio" name="contactMethod" value="phone" checked /> Phone Call</label>
+                  <label class="radio-opt"><input type="radio" name="contactMethod" value="text" /> Text Message</label>
+                  <label class="radio-opt"><input type="radio" name="contactMethod" value="email" /> Email</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="projectDetails" class="form-label">Project Details</label>
+                <textarea
+                  id="projectDetails"
+                  name="projectDetails"
+                  class="form-control"
+                  placeholder="Tell us what's going on — for example, 'furnace won't turn on' or 'AC runs but doesn't cool the house.' Any detail helps us prepare.">
+                </textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-opt">
+                  <input type="checkbox" name="financingInterest" id="financingInterest" />
+                  I'm interested in learning about financing options through FTL Financing
+                </label>
+              </div>
+
+            </div><!-- end #formFields -->
+
+            <!-- Success message (shown via JS after submit) -->
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+              <div class="form-success-icon" aria-hidden="true">✅</div>
+              <div class="form-success-title">Request Received!</div>
+              <p class="form-success-msg">
+                Thank you for reaching out. We'll review your request and follow up soon to discuss your heating or air conditioning needs.<br><br>
+                <!-- REPLACE: Update with your real phone number -->
+                For urgent situations, you can reach us directly at <strong>(555) 123-4567</strong>.
+              </p>
+            </div>
+
+            <div class="submit-wrap">
+              <button type="submit" class="btn btn-primary btn-submit">Send My Request</button>
+              <p class="form-note">We typically follow up within 1 business day. Your information is never shared or sold.</p>
+            </div>
+
+          </form>
+        </div>
+
+
+        <!-- ---- SIDEBAR ---- -->
+        <aside class="contact-sidebar reveal reveal-delay-2">
+
+          <!-- Contact info card -->
+          <div class="contact-info-card">
+            <div class="contact-info-title">Direct Contact</div>
+
+            <!-- REPLACE: Update phone number -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📞</div>
+              <div>
+                <div class="contact-detail-label">Phone</div>
+                <div class="contact-detail-value"><a href="tel:+15551234567">(555) 123-4567</a></div>
+              </div>
+            </div>
+
+            <!-- REPLACE: Update email -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">✉</div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value"><a href="mailto:hello@yourhvaccompany.com">hello@yourhvaccompany.com</a></div>
+              </div>
+            </div>
+
+            <!-- REPLACE: Update service area -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact-detail-label">Service Area</div>
+                <div class="contact-detail-value">Serving homeowners across Iowa</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hours card -->
+          <!-- REPLACE: Update with your real business hours -->
+          <div class="hours-card">
+            <div class="hours-card-title">Business Hours</div>
+            <div class="hours-row">
+              <span class="hours-day">Monday – Friday</span>
+              <span class="hours-time">8:00 AM – 5:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Saturday</span>
+              <span class="hours-time">By Appointment</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sunday</span>
+              <span class="hours-closed">Closed</span>
+            </div>
+          </div>
+
+          <!-- Trust signals -->
+          <div class="sidebar-trust">
+            <div class="sidebar-trust-item"><div class="sidebar-trust-dot"></div>20+ years of experience</div>
+            <div class="sidebar-trust-item"><div class="sidebar-trust-dot"></div>Warranty on repairs &amp; installations</div>
+            <div class="sidebar-trust-item"><div class="sidebar-trust-dot"></div>Financing available through FTL Financing</div>
+            <div class="sidebar-trust-item"><div class="sidebar-trust-dot"></div>Honest, no-pressure guidance</div>
+            <div class="sidebar-trust-item"><div class="sidebar-trust-dot"></div>Iowa homeowners only — no commercial</div>
+          </div>
+
+          <!-- Service area note -->
+          <div class="area-callout">
+            <div class="area-callout-icon" aria-hidden="true">📍</div>
+            <div class="area-callout-text">
+              <strong>Iowa Homeowners</strong>
+              <!-- REPLACE: Update with your specific service area/cities -->
+              We serve residential homeowners across Iowa. Include your city in the form above so we can confirm coverage before following up.
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       FAQ SECTION
+  ================================================================ -->
+  <section id="faq">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Common Questions</p>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Do you offer financing?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              Yes — financing options are available through FTL Financing for qualifying Iowa homeowners. Financing can apply to both repairs and system replacements. Availability and terms depend on the provider and your eligibility. Mention your interest in financing when you request service and we'll walk you through the details.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Do repairs and installations include a warranty?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              Yes. Both repairs and system replacements come with warranty coverage. The exact terms depend on the specific work being done — we'll explain your warranty clearly before any work begins so you know exactly what's covered and for how long.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Do you handle full system replacements?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              Yes — we handle both repairs and full system replacements for heating and air conditioning systems. If you're not sure whether repair or replacement makes more sense for your situation, we'll give you an honest, straightforward recommendation based on the age and condition of your system.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">How soon will you follow up after I submit the form?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <!-- REPLACE: Update with your real response time commitment -->
+              We typically follow up within 1 business day. If your situation is urgent — like a furnace that isn't working in cold weather — feel free to call us directly at <a href="tel:+15551234567" style="color: var(--green-dark); font-weight: 600;">(555) 123-4567</a> for a faster response.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Do you work with commercial properties?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              We focus exclusively on residential homeowners. Our entire process is built around serving families in their homes — not commercial or rental properties. If you're a homeowner, we'd love to help.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       BOTTOM CTA BANNER
+  ================================================================ -->
+  <div class="cta-banner">
+    <div class="container cta-banner-inner reveal">
+      <h2 class="cta-banner-title">Not sure what you need yet?</h2>
+      <p class="cta-banner-sub">That's okay — fill out the form and describe what's going on. We'll help you figure it out.</p>
+      <a href="#top" class="btn btn-primary btn-lg">Back to Top of Form</a>
+    </div>
+  </div>
+
+</main>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <!-- REPLACE: Swap with your real business logo -->
+        <a href="index.html" class="footer-logo" aria-label="Your HVAC Company Home">
+          <span class="footer-logo-mark" aria-hidden="true">❄</span>
+          Your HVAC Company
+        </a>
+        <p class="footer-tagline">Reliable heating and air conditioning for Iowa homeowners. Backed by 20+ years of experience.</p>
+        <div class="footer-contact-list">
+          <!-- REPLACE: Update with your real phone number -->
+          <div class="footer-contact-item">📞 <a href="tel:+15551234567">(555) 123-4567</a></div>
+          <!-- REPLACE: Update with your real email -->
+          <div class="footer-contact-item">✉ <a href="mailto:hello@yourhvaccompany.com">hello@yourhvaccompany.com</a></div>
+          <!-- REPLACE: Update with your actual service area -->
+          <div class="footer-contact-item">📍 Serving homeowners across Iowa</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Services</div>
+        <ul class="footer-links-list" role="list">
+          <li><a href="index.html#services">Heating Repair</a></li>
+          <li><a href="index.html#services">AC Repair</a></li>
+          <li><a href="index.html#services">System Replacement</a></li>
+          <li><a href="index.html#services">Preventive Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Company</div>
+        <ul class="footer-links-list" role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#warranty">Warranty</a></li>
+          <li><a href="index.html#financing">Financing</a></li>
+          <li><a href="contact.html">Request Service</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Get in Touch</div>
+        <ul class="footer-links-list" role="list">
+          <li><a href="contact.html">Request Service</a></li>
+          <!-- REPLACE: Update with your real phone number and email -->
+          <li><a href="tel:+15551234567">Call Us</a></li>
+          <li><a href="mailto:hello@yourhvaccompany.com">Email Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <!-- REPLACE: Update year and business name -->
+      <p class="footer-copy">&copy; 2024 Your HVAC Company. All rights reserved.</p>
+      <p class="footer-copy">Serving Iowa homeowners with honest HVAC service.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- REPLACE: Update the title with your real business name -->
+  <title>Your HVAC Company | Iowa Heating & Air Conditioning</title>
+  <meta name="description" content="Reliable heating and air conditioning repair and replacement for Iowa homeowners. 20+ years of experience. Warranty included. Financing available." />
+
+  <!-- Google Fonts: Sora (display) + Source Serif 4 (body warmth) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES — Edit colors and fonts here to rebrand easily
+       ============================================================ */
+    :root {
+      --navy:        #0d1f3c;
+      --navy-mid:    #162d52;
+      --navy-light:  #1e3d6e;
+      --green:       #4caf50;
+      --green-dark:  #388e3c;
+      --green-light: #a5d6a7;
+      --cream:       #f7f5f0;
+      --warm-white:  #fdfcfa;
+      --gray-100:    #f1f0ed;
+      --gray-200:    #e0ddd7;
+      --gray-400:    #9e9b94;
+      --gray-600:    #5c5a55;
+      --gray-800:    #2e2d2a;
+      --text-dark:   #1a1916;
+      --text-mid:    #3a3835;
+      --shadow-sm:   0 2px 8px rgba(13,31,60,0.09);
+      --shadow-md:   0 6px 24px rgba(13,31,60,0.13);
+      --shadow-lg:   0 16px 48px rgba(13,31,60,0.18);
+      --radius-sm:   8px;
+      --radius-md:   14px;
+      --radius-lg:   22px;
+      --font-display: 'Sora', sans-serif;
+      --font-body:    'Source Serif 4', Georgia, serif;
+      --transition:  0.22s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--warm-white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-width: 0;
+    }
+
+    img { display: block; max-width: 100%; width: 100%; height: auto; object-fit: cover; }
+
+    a { color: inherit; text-decoration: none; }
+
+    ul { list-style: none; }
+
+
+    /* Prevent small pieces of content from forcing the whole page wider than the viewport. */
+    main, section, header, footer,
+    .container, .hero-inner,
+    .hero-content, .hero-image-wrap,
+    .service-card, .why-card, .testimonial-card,
+    .warranty-badge-large, .financing-visual,
+    .service-form, .footer-brand {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .hero-headline, .section-title, .section-subtitle,
+    .service-title, .why-card-title, .testimonial-quote,
+    .footer-tagline, .footer-contact-item,
+    .financing-visual-title, .financing-visual-sub {
+      overflow-wrap: break-word;
+    }
+
+    /* ============================================================
+       UTILITY CLASSES
+       ============================================================ */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-inline: clamp(16px, 5vw, 28px);
+      min-width: 0;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background var(--transition), color var(--transition),
+                  border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+      white-space: normal;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.2;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      box-shadow: 0 4px 18px rgba(76,175,80,0.38);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.55);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+    }
+
+    .btn-outline-navy {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline-navy:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-lg {
+      font-size: 1rem;
+      padding: 16px 32px;
+    }
+
+    section { padding: clamp(56px, 9vw, 72px) 0; }
+
+    @media (min-width: 520px) {
+      .btn { white-space: nowrap; }
+    }
+
+    @media (max-width: 420px) {
+      .btn,
+      .btn-lg {
+        width: 100%;
+        padding-inline: 18px;
+      }
+    }
+
+    /* ============================================================
+       HEADER / NAV
+       ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      box-shadow: 0 2px 16px rgba(13,31,60,0.22);
+      transition: background var(--transition);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 64px;
+      min-width: 0;
+    }
+
+    /* REPLACE: Swap this text/logo with your real business logo image */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.92rem, 2.4vw, 1.08rem);
+      color: #fff;
+      letter-spacing: -0.01em;
+      min-width: 0;
+      max-width: calc(100vw - 96px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-logo-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2px;
+      min-width: 0;
+      flex-shrink: 1;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.78);
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-cta {
+      display: none;
+      flex: 0 0 auto;
+      padding-inline: 18px;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 0 0 auto;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu drawer */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-mid);
+      padding: 12px clamp(16px, 5vw, 28px) 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color var(--transition);
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--green-light); }
+
+    .mobile-menu-cta {
+      margin-top: 16px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (min-width: 1080px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-cta { display: inline-flex; }
+    }
+
+    @media (min-width: 1080px) and (max-width: 1180px) {
+      .nav-logo { font-size: 0.96rem; }
+      .nav-links a {
+        font-size: 0.78rem;
+        padding-inline: 7px;
+      }
+      .nav-cta {
+        font-size: 0.82rem;
+        padding-inline: 14px;
+      }
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      background: var(--navy);
+      overflow: hidden;
+      padding: 0;
+      min-height: min(92vh, 760px);
+      display: flex;
+      align-items: center;
+    }
+
+    /* Subtle geometric background texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(76,175,80,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at -10% 80%, rgba(76,175,80,0.07) 0%, transparent 60%),
+        linear-gradient(160deg, #0d1f3c 0%, #162d52 55%, #1e3d6e 100%);
+      pointer-events: none;
+    }
+
+    /* Decorative dot grid */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: clamp(64px, 12vw, 100px) clamp(16px, 5vw, 28px) clamp(56px, 10vw, 88px);
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(32px, 7vw, 48px);
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      background: rgba(76,175,80,0.14);
+      border: 1px solid rgba(76,175,80,0.28);
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      color: rgba(255,255,255,0.72);
+      line-height: 1.72;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    @media (max-width: 420px) {
+      .hero-buttons { flex-direction: column; }
+    }
+
+    /* Trust badges */
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50px;
+      padding: 9px 16px;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.88);
+      max-width: 100%;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 420px) {
+      .hero-badges { flex-direction: column; }
+      .trust-badge {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        align-items: flex-start;
+      }
+    }
+
+    .trust-badge-icon {
+      font-size: 1rem;
+    }
+
+    /* Hero image card */
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+      /* REPLACE: Replace this gradient with a real photo of your work or a home HVAC install */
+      background: linear-gradient(135deg, #1e3d6e 0%, #2d5a8a 50%, #4caf50 130%);
+      position: relative;
+    }
+
+    .hero-image-card img {
+      height: 100%;
+      opacity: 0.85;
+    }
+
+    /* Overlay text on hero card */
+    .hero-card-badge {
+      position: absolute;
+      bottom: clamp(12px, 4vw, 20px);
+      left: clamp(12px, 4vw, 20px);
+      right: clamp(12px, 4vw, 20px);
+      background: rgba(13,31,60,0.86);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .hero-card-badge-text {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero-card-badge-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      font-family: var(--font-display);
+    }
+
+    .hero-card-badge-stat {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--green-light);
+    }
+
+    @media (min-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        min-height: min(88vh, 760px);
+        padding-block: 100px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-image-card { aspect-ratio: 4/3.35; }
+      .hero-card-badge-stat { font-size: 1.15rem; }
+    }
+
+    /* ============================================================
+       SERVICES SECTION
+       ============================================================ */
+    #services {
+      background: var(--cream);
+    }
+
+    .services-header {
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 600px) {
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 1000px) {
+      .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 30px 26px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .service-desc {
+      font-size: 0.93rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    .service-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      padding-top: 8px;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .service-link::after { content: ' →'; }
+
+    /* ============================================================
+       WHY CHOOSE US
+       ============================================================ */
+    #why {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #why::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #why .section-title { color: #fff; }
+    #why .section-label { color: var(--green-light); }
+    #why .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    @media (min-width: 600px) {
+      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 960px) {
+      .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 26px 24px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .why-card:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(76,175,80,0.35);
+    }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .why-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .why-card-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       WARRANTY / PEACE OF MIND
+       ============================================================ */
+    #warranty {
+      background: var(--warm-white);
+    }
+
+    .warranty-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .warranty-wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    .warranty-badge-large {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 48px 36px;
+      text-align: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .warranty-icon-wrap {
+      width: 80px;
+      height: 80px;
+      background: rgba(76,175,80,0.18);
+      border: 2px solid rgba(76,175,80,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .warranty-badge-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .warranty-badge-sub {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    .warranty-points {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .warranty-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .warranty-check {
+      width: 26px;
+      height: 26px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .warranty-point-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .warranty-point-text p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       PROJECTS GALLERY
+       ============================================================ */
+    #projects {
+      background: var(--gray-100);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(12px, 3vw, 16px);
+      margin-top: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .project-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--navy-light);
+      aspect-ratio: 1;
+      position: relative;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* REPLACE: Replace these gradient placeholders with real project photos */
+    .project-card:nth-child(1) { background: linear-gradient(135deg, #1e3d6e, #2a5298); }
+    .project-card:nth-child(2) { background: linear-gradient(135deg, #162d52, #4caf50); }
+    .project-card:nth-child(3) { background: linear-gradient(135deg, #0d1f3c, #1e3d6e); }
+    .project-card:nth-child(4) { background: linear-gradient(135deg, #2d5a8a, #388e3c); }
+    .project-card:nth-child(5) { background: linear-gradient(135deg, #1a3a6b, #4a7fb5); }
+    .project-card:nth-child(6) { background: linear-gradient(135deg, #0d1f3c, #5a9e5d); }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .project-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(13,31,60,0.9));
+      padding: 20px 14px 14px;
+    }
+
+    .project-caption-text {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .project-caption-icon {
+      font-size: 0.75rem;
+      color: var(--green-light);
+    }
+
+    .projects-note {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+       ============================================================ */
+    #testimonials {
+      background: var(--warm-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    @media (min-width: 640px) {
+      .testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 960px) {
+      .testimonials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      color: #f59e0b;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--green-light);
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .testimonial-location {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+    }
+
+    /* ============================================================
+       FINANCING
+       ============================================================ */
+    #financing {
+      background: var(--cream);
+    }
+
+    .financing-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .financing-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    .financing-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 28px 0 36px;
+    }
+
+    .financing-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+
+    .financing-item-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .financing-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      line-height: 1.55;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 16px;
+      margin-top: 24px;
+    }
+
+    .financing-visual {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 6vw, 44px) clamp(20px, 5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .financing-visual .btn {
+      align-self: flex-start;
+    }
+
+    @media (max-width: 520px) {
+      .financing-visual .btn {
+        width: 100%;
+      }
+    }
+
+    .financing-visual-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .financing-visual-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.65;
+    }
+
+    .financing-partner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(76,175,80,0.15);
+      border: 1px solid rgba(76,175,80,0.35);
+      border-radius: 8px;
+      padding: 12px 16px;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .financing-partner-icon {
+      font-size: 1.4rem;
+    }
+
+    .financing-partner-label {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-light);
+      line-height: 1.3;
+    }
+
+    /* ============================================================
+       REQUEST SERVICE FORM
+       ============================================================ */
+    #request {
+      background: var(--warm-white);
+    }
+
+    .form-header {
+      margin-bottom: 40px;
+    }
+
+    .service-form {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 6vw, 40px) clamp(18px, 5vw, 28px);
+      box-shadow: var(--shadow-sm);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+      .service-form { padding: 48px 44px; }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: 580px) {
+      .form-row.two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-800);
+      letter-spacing: 0.02em;
+    }
+
+    .form-control {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--gray-100);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      width: 100%;
+      min-width: 0;
+      transition: border-color var(--transition), background var(--transition);
+      appearance: none;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green);
+      background: #fff;
+    }
+
+    textarea.form-control {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.9rem;
+      color: var(--gray-800);
+      cursor: pointer;
+      font-family: var(--font-display);
+    }
+
+    .radio-label input[type="radio"] {
+      accent-color: var(--green);
+      width: 16px;
+      height: 16px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      accent-color: var(--green);
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .form-submit-wrap {
+      margin-top: 28px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 16px 32px;
+    }
+
+    /* Form success message */
+    .form-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1.5px solid var(--green);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-success.visible { display: flex; }
+
+    .form-success-icon {
+      font-size: 2.5rem;
+    }
+
+    .form-success-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .form-success-msg {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       FINAL CTA BANNER
+       ============================================================ */
+    .cta-banner {
+      background: var(--navy);
+      padding: 72px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(76,175,80,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-banner-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 420px) {
+      .cta-banner .btn { width: 100%; }
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      background: #0a1828;
+      color: rgba(255,255,255,0.7);
+      padding: 52px 0 28px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 900px) {
+      .footer-inner { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* REPLACE: Swap logo text/icon with your real footer logo */
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    .footer-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--green-light);
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--green-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-area {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ============================================================
+       SCROLL REVEAL ANIMATION
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       DIVIDER UTILITY
+       ============================================================ */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      margin: 16px 0 24px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       SITE HEADER / NAVIGATION
+       ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <nav class="nav-inner">
+
+        <!-- REPLACE: Swap this with your real logo image
+             Example: <img src="logo.png" alt="Your HVAC Company Logo" style="height:40px;"> -->
+        <a href="#top" class="nav-logo">
+          <span class="nav-logo-icon">❄</span>
+          Your HVAC Company
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#financing">Financing</a></li>
+          <li><a href="#request">Request Service</a></li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <a href="#request" class="btn btn-primary nav-cta">Request Service</a>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </nav>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation">
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#why" class="mobile-nav-link">Why Choose Us</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+      <a href="#financing" class="mobile-nav-link">Financing</a>
+      <a href="#request" class="mobile-nav-link">Request Service</a>
+      <a href="#request" class="btn btn-primary mobile-menu-cta">Request Service</a>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <!-- Left: Text content -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">Iowa Heating &amp; Air Conditioning</span>
+
+        <h1 class="hero-headline">
+          Reliable <em>Heating &amp; Air</em><br>
+          Conditioning Service<br>
+          for Iowa Homeowners
+        </h1>
+
+        <p class="hero-subheadline">
+          Repairs, replacements, and honest HVAC support backed by 20+ years of experience. We explain the job clearly before we start, so you always know what to expect.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#request" class="btn btn-primary btn-lg">Request Service</a>
+          <a href="#services" class="btn btn-outline-white btn-lg">View Services</a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="hero-badges">
+          <div class="trust-badge">
+            <span class="trust-badge-icon">🏆</span>
+            20+ Years Experience
+          </div>
+          <div class="trust-badge">
+            <span class="trust-badge-icon">🛡</span>
+            Repair &amp; System Warranty
+          </div>
+          <div class="trust-badge">
+            <span class="trust-badge-icon">💳</span>
+            Financing Available
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image placeholder -->
+      <div class="hero-image-wrap reveal">
+        <div class="hero-image-card">
+          <!-- REPLACE: Replace with a real photo of your work, your team, or a completed install
+               Use an <img> tag here: <img src="hero-photo.jpg" alt="HVAC technician working on system"> -->
+        </div>
+        <div class="hero-card-badge">
+          <div>
+            <div class="hero-card-badge-text">Trusted Local Service</div>
+            <div class="hero-card-badge-sub">Serving Iowa homeowners</div>
+          </div>
+          <div class="hero-card-badge-stat">20+</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES SECTION
+       ============================================================ -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Heating &amp; Air Conditioning Services</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          Whether your system needs a repair or it's time for a replacement, we'll help you understand your options and make the right call for your home.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Service Card 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🔥</div>
+          <div class="service-title">Heating Repair</div>
+          <p class="service-desc">
+            If your furnace or heating system isn't keeping up, we'll diagnose the problem and walk you through exactly what needs to be fixed — before any work begins.
+          </p>
+          <a href="#request" class="service-link">Request Service</a>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card reveal">
+          <div class="service-icon">❄️</div>
+          <div class="service-title">Air Conditioner Repair</div>
+          <p class="service-desc">
+            From a unit that won't cool properly to a system that won't turn on at all — we get to the root of the issue and give you a clear, straightforward repair plan.
+          </p>
+          <a href="#request" class="service-link">Request Service</a>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🏠</div>
+          <div class="service-title">System Replacement</div>
+          <p class="service-desc">
+            When a repair no longer makes financial sense, we'll help you choose the right new system for your home's size and needs — and handle the full installation.
+          </p>
+          <a href="#request" class="service-link">Request Service</a>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🔧</div>
+          <div class="service-title">Preventive Maintenance</div>
+          <p class="service-desc">
+            Regular service keeps your system running efficiently and helps you avoid unexpected breakdowns. We'll check everything over and let you know what we find.
+          </p>
+          <a href="#request" class="service-link">Request Service</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHY CHOOSE US SECTION
+       ============================================================ -->
+  <section id="why">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Why Homeowners Choose Us</p>
+        <h2 class="section-title">Experience You Can Count On</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          We're not the biggest HVAC company in Iowa — and that's intentional. We keep things simple, honest, and focused on doing right by the homeowners we serve.
+        </p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <div class="why-card-title">20+ Years of Experience</div>
+          <p class="why-card-desc">Over two decades of hands-on experience means we've seen just about every HVAC situation a home can throw at us.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <div class="why-card-title">Clear Communication First</div>
+          <p class="why-card-desc">We explain the problem and the plan before we do anything. You won't be surprised by what we find or what it costs.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <div class="why-card-title">Warranty for Peace of Mind</div>
+          <p class="why-card-desc">Both repairs and system installations come with a warranty. We'll go over the details after reviewing your specific job.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-num">04</div>
+          <div class="why-card-title">Honest Repair vs. Replace Advice</div>
+          <p class="why-card-desc">We'll give you a straight answer on whether a repair makes sense or if replacement is the smarter investment — no pressure, just facts.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-num">05</div>
+          <div class="why-card-title">Focused on Homeowners</div>
+          <p class="why-card-desc">We work with homeowners, not commercial clients. That means our whole operation is set up to serve families like yours.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-num">06</div>
+          <div class="why-card-title">Local &amp; Dependable</div>
+          <p class="why-card-desc">We're based in Iowa and serve the communities around us. When you call, you're talking to someone who knows your area.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WARRANTY / PEACE OF MIND SECTION
+       ============================================================ -->
+  <section id="warranty">
+    <div class="container">
+      <div class="warranty-wrap">
+
+        <!-- Warranty visual card -->
+        <div class="warranty-badge-large reveal">
+          <div class="warranty-icon-wrap">🛡</div>
+          <div class="warranty-badge-title">Warranty Included</div>
+          <p class="warranty-badge-sub">
+            All repairs and system installations include a warranty. The exact terms depend on the job — we'll walk you through the details before any work begins.
+          </p>
+        </div>
+
+        <!-- Warranty detail points -->
+        <div class="reveal">
+          <p class="section-label">Our Commitment to You</p>
+          <h2 class="section-title">Your Peace of Mind Matters</h2>
+          <div class="divider"></div>
+
+          <div class="warranty-points">
+
+            <div class="warranty-point">
+              <div class="warranty-check">✓</div>
+              <div class="warranty-point-text">
+                <strong>Warranty on Repairs</strong>
+                <p>When we fix something, we stand behind that work. Warranty terms are communicated clearly once we review your job details.</p>
+              </div>
+            </div>
+
+            <div class="warranty-point">
+              <div class="warranty-check">✓</div>
+              <div class="warranty-point-text">
+                <strong>Warranty on System Replacements</strong>
+                <p>New installations come with warranty coverage. We'll review what's included based on the specific system and job before you commit to anything.</p>
+              </div>
+            </div>
+
+            <div class="warranty-point">
+              <div class="warranty-check">✓</div>
+              <div class="warranty-point-text">
+                <strong>Clear Terms, No Surprises</strong>
+                <p>We believe in explaining warranty details in plain language — so you know exactly what's covered and for how long.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PREVIOUS PROJECTS SECTION
+       ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Our Work</p>
+        <h2 class="section-title">Previous Projects</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">A look at some of the heating and air conditioning work we've completed for homeowners in Iowa.</p>
+      </div>
+
+      <!-- REPLACE: Replace the gradient placeholder cards below with real project photos.
+           Each card should have an <img> tag inside it with the real photo.
+           Example: <img src="furnace-replacement.jpg" alt="Furnace replacement in Iowa home"> -->
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">🔥</div>
+            <div class="project-caption-text">Furnace Replacement</div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">❄️</div>
+            <div class="project-caption-text">AC System Install</div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">🔧</div>
+            <div class="project-caption-text">Outdoor Unit Service</div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">🏠</div>
+            <div class="project-caption-text">Home HVAC Upgrade</div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">🔥</div>
+            <div class="project-caption-text">Heating System Service</div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-caption">
+            <div class="project-caption-icon">❄️</div>
+            <div class="project-caption-text">Central Air Installation</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- REPLACE: Remove this note when real project photos have been added -->
+      <p class="projects-note">Real project photos will be added here. Placeholders shown above.</p>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       NOTE: These are PLACEHOLDER testimonials for design purposes only.
+       REPLACE with real customer reviews before launching the site.
+       Use first name and last initial only for privacy.
+       ============================================================ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">What Homeowners Say</p>
+        <h2 class="section-title">Testimonials</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Here's what Iowa homeowners have shared about working with us.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <!-- PLACEHOLDER testimonial — replace with real customer review -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Great communication and honest service. The repair was explained clearly before the work started, which I really appreciated."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MT</div>
+            <div>
+              <div class="testimonial-name">Mark T.</div>
+              <div class="testimonial-location">Iowa homeowner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER testimonial — replace with real customer review -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"They helped us understand whether repair or replacement made more sense for our home. No pressure, just straight answers."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AR</div>
+            <div>
+              <div class="testimonial-name">Angela R.</div>
+              <div class="testimonial-location">Iowa homeowner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER testimonial — replace with real customer review -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Professional, reliable, and easy to work with. The work was done right the first time and I felt informed the whole way through."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DM</div>
+            <div>
+              <div class="testimonial-name">David M.</div>
+              <div class="testimonial-location">Iowa homeowner</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FINANCING SECTION
+       ============================================================ -->
+  <section id="financing">
+    <div class="container">
+      <div class="financing-inner">
+
+        <!-- Left: Financing details -->
+        <div class="reveal">
+          <p class="section-label">Financing Options</p>
+          <h2 class="section-title">Financing Available</h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">
+            We understand that HVAC repairs and replacements can be a significant expense. That's why we offer financing through FTL Financing for qualifying Iowa homeowners.
+          </p>
+
+          <div class="financing-highlights">
+            <div class="financing-item">
+              <div class="financing-item-dot"></div>
+              <span>Financing options available through FTL Financing</span>
+            </div>
+            <div class="financing-item">
+              <div class="financing-item-dot"></div>
+              <span>Available to qualifying Iowa homeowners</span>
+            </div>
+            <div class="financing-item">
+              <div class="financing-item-dot"></div>
+              <span>Ask about financing when you request service</span>
+            </div>
+            <div class="financing-item">
+              <div class="financing-item-dot"></div>
+              <span>Applies to both repairs and system replacements</span>
+            </div>
+          </div>
+
+          <a href="#request" class="btn btn-primary">Ask About Financing</a>
+
+          <p class="financing-disclaimer">
+            Financing availability and terms depend on the provider and customer eligibility. Contact us to learn more about your options.
+          </p>
+        </div>
+
+        <!-- Right: Visual card -->
+        <div class="financing-visual reveal">
+          <div class="financing-partner-badge">
+            <span class="financing-partner-icon">🤝</span>
+            <div class="financing-partner-label">Financing Partner<br>FTL Financing</div>
+          </div>
+          <div class="financing-visual-title">Don't wait on comfort</div>
+          <p class="financing-visual-sub">
+            A broken furnace or AC shouldn't have to wait until the timing feels right. Financing options may help you get your home back to comfortable sooner.
+          </p>
+          <a href="#request" class="btn btn-outline-white">Request Service &amp; Ask About Financing</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REQUEST SERVICE FORM
+       NOTE: This form shows a success message on submit — it does NOT
+       actually send any data. This is a prototype only.
+       FINAL VERSION: Replace this section with a Squarespace Form Block
+       connected to your email or a data storage integration.
+       ============================================================ -->
+  <section id="request" style="background: var(--gray-100);">
+    <div class="container">
+      <div class="form-header reveal">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Request Service</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          Fill out the form below and we'll follow up to discuss your HVAC needs. There's no obligation — just a conversation.
+        </p>
+      </div>
+
+      <div class="service-form reveal" id="serviceFormWrap">
+
+        <!-- The form -->
+        <form id="serviceForm" novalidate>
+
+          <!-- Name row -->
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="firstName" class="form-label">First Name *</label>
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="form-label">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="form-row two-col">
+            <div class="form-group">
+              <!-- REPLACE: Update this with your actual phone number validation if needed -->
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567" required />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" />
+            </div>
+          </div>
+
+          <!-- City row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city" class="form-label">City *</label>
+              <input type="text" id="city" name="city" class="form-control" placeholder="Your city in Iowa" required />
+            </div>
+          </div>
+
+          <!-- Service dropdown -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="serviceType" class="form-label">Service Needed *</label>
+              <select id="serviceType" name="serviceType" class="form-control" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option value="heating-repair">Heating Repair</option>
+                <option value="ac-repair">AC Repair</option>
+                <option value="heating-replacement">Heating Replacement</option>
+                <option value="ac-replacement">AC Replacement</option>
+                <option value="maintenance">Maintenance / Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preferred contact -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Preferred Contact Method</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="contactMethod" value="phone" checked /> Phone
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="contactMethod" value="email" /> Email
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="contactMethod" value="text" /> Text
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="projectDetails" class="form-label">Project Details</label>
+              <textarea id="projectDetails" name="projectDetails" class="form-control"
+                placeholder="Briefly describe what's going on — for example, 'furnace not turning on' or 'AC blows warm air'. Any detail helps us prepare."></textarea>
+            </div>
+          </div>
+
+          <!-- Financing checkbox -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="financingInterest" id="financingInterest" />
+                I'm interested in learning about financing options
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn btn-primary btn-submit">Send Request</button>
+          </div>
+
+        </form>
+
+        <!-- Success message (hidden until form submit) -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Request Received!</div>
+          <p class="form-success-msg">
+            Thank you for reaching out. We'll be in touch shortly to discuss your heating or air conditioning needs. <br><br>
+            <!-- REPLACE: Update this with your actual phone number -->
+            If you need immediate assistance, please call us directly at <strong>(555) 123-4567</strong>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FINAL CTA BANNER
+       ============================================================ -->
+  <div class="cta-banner">
+    <div class="container cta-banner-inner reveal">
+      <h2 class="cta-banner-title">Need help with heating or air conditioning?</h2>
+      <p class="cta-banner-sub">Iowa homeowners trust us to get it right. Let's talk about your home.</p>
+      <a href="#request" class="btn btn-primary btn-lg">Request Service Today</a>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <!-- REPLACE: Swap with your real footer logo -->
+          <a href="#top" class="footer-logo">
+            <span class="footer-logo-icon">❄</span>
+            Your HVAC Company
+          </a>
+          <p class="footer-tagline">
+            Reliable heating and air conditioning service for Iowa homeowners. Backed by 20+ years of hands-on experience.
+          </p>
+          <!-- REPLACE: Add your real phone number and email below -->
+          <div class="footer-contact-item">📞 <a href="tel:+15551234567">(555) 123-4567</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:hello@yourhvaccompany.com">hello@yourhvaccompany.com</a></div>
+          <!-- REPLACE: Update with your actual service area -->
+          <div class="footer-contact-item">📍 Serving homeowners in Iowa</div>
+        </div>
+
+        <!-- Services links -->
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="#services">Heating Repair</a></li>
+            <li><a href="#services">AC Repair</a></li>
+            <li><a href="#services">System Replacement</a></li>
+            <li><a href="#services">Preventive Maintenance</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#warranty">Warranty</a></li>
+            <li><a href="#financing">Financing</a></li>
+            <li><a href="#request">Request Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <!-- REPLACE: Update business name and year -->
+        <p class="footer-copyright">&copy; 2024 Your HVAC Company. All rights reserved.</p>
+        <p class="footer-area">Serving Iowa homeowners with honest HVAC service.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       Handles: mobile menu toggle, form submission, scroll reveal
+       ============================================================ -->
+  <script>
+    // ---- Mobile Menu ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.mobile-nav-link, .mobile-menu-cta').forEach(function (link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Keep the nav from staying open if the screen is resized into desktop layout.
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1080) closeMobileMenu();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+
+    // ---- Form Submit (Prototype — no real data is sent) ----
+    // FINAL VERSION: Replace this entire block with your Squarespace Form Block
+    // or connect a real form handler before going live.
+    const serviceForm = document.getElementById('serviceForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    serviceForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic required field check
+      const required = serviceForm.querySelectorAll('[required]');
+      let allFilled = true;
+
+      required.forEach(function (field) {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#e53935';
+          allFilled = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+
+      if (!allFilled) {
+        const firstInvalid = serviceForm.querySelector('[required][style*="border-color"]');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      // Hide form and show success
+      serviceForm.style.display = 'none';
+      formSuccess.classList.add('visible');
+
+      // Scroll to the success message
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+
+    // ---- Scroll Reveal ----
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
