@@ -1,6 +1,6 @@
 /* ================================================================
-   script.js — Your HVAC Company
-   Shared JS for index.html, about.html, contact.html, resources.html
+   main.js - Your HVAC Company
+   Shared JavaScript for the static site.
    ================================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   --------------------------------------------------------------- */
   const hamburger    = document.getElementById('hamburger');
   const mobileDrawer = document.getElementById('mobileDrawer');
+  const navDropdowns = document.querySelectorAll('.nav-dropdown, .mobile-dropdown');
 
   if (hamburger && mobileDrawer) {
     hamburger.addEventListener('click', function () {
@@ -19,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close drawer when any link or button inside it is clicked
-    mobileDrawer.querySelectorAll('a, button').forEach(function (el) {
+    // Close drawer when a real navigation link is clicked.
+    mobileDrawer.querySelectorAll('a').forEach(function (el) {
       el.addEventListener('click', function () {
         mobileDrawer.classList.remove('open');
         hamburger.classList.remove('open');
@@ -45,20 +46,57 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------------------------------------------------------------
-     2. ACTIVE NAV LINK HIGHLIGHT
-     Marks the correct nav link as active based on the current page.
-     Works for index, about, contact, and resources pages.
+     2. NAV DROPDOWNS
+     Desktop opens on hover/focus through CSS; this adds tap support.
   --------------------------------------------------------------- */
-  const rawPath    = window.location.pathname.split('/').pop();
-  const currentPage = rawPath === '' ? 'index.html' : rawPath;
+  navDropdowns.forEach(function (dropdown) {
+    const toggle = dropdown.querySelector('button.nav-dropdown-toggle, .mobile-dropdown-toggle');
+    if (!toggle) return;
 
-  document.querySelectorAll('.nav-links a[data-page], .mobile-drawer a[data-page]').forEach(function (link) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      const openClass = dropdown.classList.contains('mobile-dropdown') ? 'open' : 'is-open';
+      const isOpen = dropdown.classList.toggle(openClass);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+
+      navDropdowns.forEach(function (other) {
+        if (other === dropdown) return;
+        other.classList.remove('is-open', 'open');
+        const otherToggle = other.querySelector('button.nav-dropdown-toggle, .mobile-dropdown-toggle');
+        if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.nav-dropdown, .mobile-dropdown')) return;
+    navDropdowns.forEach(function (dropdown) {
+      dropdown.classList.remove('is-open', 'open');
+      const toggle = dropdown.querySelector('button.nav-dropdown-toggle, .mobile-dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------------------------------------------------------------
+     3. ACTIVE NAV LINK HIGHLIGHT
+     Marks the correct nav link or dropdown as active based on page/hash.
+  --------------------------------------------------------------- */
+  const rawPath = window.location.pathname.split('/').pop();
+  const currentPage = rawPath === '' ? 'index.html' : rawPath;
+  const currentHash = window.location.hash;
+
+  document.querySelectorAll('.nav-links a[data-page], .nav-links button[data-page], .mobile-drawer a[data-page], .mobile-drawer button[data-page]').forEach(function (link) {
     const page = link.getAttribute('data-page');
     if (!page) return;
-    // Match: "index" matches "index.html" or empty path; others match by inclusion
+
+    const isHome = currentPage === 'index.html' || currentPage === '';
+    const serviceHashes = ['#services', '#cooling', '#heating'];
     const isActive =
-      (page === 'index' && (currentPage === 'index.html' || currentPage === '')) ||
-      (page !== 'index' && currentPage.includes(page));
+      (page === 'index' && isHome && !serviceHashes.includes(currentHash)) ||
+      (page === 'services' && isHome && serviceHashes.includes(currentHash)) ||
+      (page === 'about' && (currentPage.includes('about') || currentPage.includes('resources'))) ||
+      (page === 'contact' && currentPage.includes('contact'));
+
     if (isActive) link.classList.add('active');
   });
 
@@ -102,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ---------------------------------------------------------------
-     5. RESOURCES PAGE — Filter chips
+     5. RESOURCES PAGE - Filter chips
      Simple category filter. Each resource card has a data-category
      attribute. Clicking a chip shows only matching cards.
      "All" chip always shows everything.
@@ -197,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------------------------------------------------------------
-     7. FAQ ACCORDION (contact.html)
+     7. FAQ ACCORDION (resources.html)
   --------------------------------------------------------------- */
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -221,16 +259,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (ob) ob.style.maxHeight = '0px';
         const oi = other.querySelector('.faq-icon');
         if (oi) oi.textContent = '+';
+        const ot = other.querySelector('.faq-trigger');
+        if (ot) ot.setAttribute('aria-expanded', 'false');
       });
 
       // Open this one if it was closed
       if (!isOpen) {
         item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
         body.style.maxHeight = body.scrollHeight + 'px';
         const icon = item.querySelector('.faq-icon');
-        if (icon) icon.textContent = '×';
+        if (icon) icon.textContent = 'x';
       }
     });
   });
 
 });
+

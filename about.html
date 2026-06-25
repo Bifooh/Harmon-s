@@ -4,286 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- REPLACE: Update with your real business name -->
-  <title>About Us | Your HVAC Company — Iowa Heating & Air Conditioning</title>
+  <title>About | Harmons Heating & Air</title>
   <!-- REPLACE: Update with your real meta description -->
-  <meta name="description" content="Learn about Your HVAC Company — over 20 years of honest heating and air conditioning service for Iowa homeowners. We listen, inspect, explain, and stand behind our work." />
+  <meta name="description" content="Learn about Harmons Heating & Air, a local, licensed, family-owned HVAC company serving Cherokee and surrounding areas." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* ----- ABOUT STORY SECTION ----- */
-    #story { background: var(--warm-white); }
-
-    .story-split {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    @media (min-width: 840px) {
-      .story-split { grid-template-columns: 1fr 1fr; }
-    }
-
-    /* REPLACE: Replace this with a real photo of the business owner or team */
-    .story-photo {
-      aspect-ratio: 4/3;
-      border-radius: var(--r-lg);
-      background: linear-gradient(135deg, #1d3a66 0%, #2d5898 60%, #3ea84a 140%);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .story-photo-badge {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(12,28,53,0.88);
-      backdrop-filter: blur(10px);
-      border-radius: var(--r-sm);
-      padding: 13px 16px;
-    }
-
-    .story-photo-stat {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--green-light);
-      line-height: 1;
-    }
-
-    .story-photo-label {
-      font-family: var(--font-display);
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.65);
-      margin-top: 3px;
-    }
-
-    .story-text p {
-      font-size: 0.97rem;
-      color: var(--gray-600);
-      line-height: 1.75;
-      margin-bottom: 16px;
-    }
-
-    .story-text p:last-child { margin-bottom: 0; }
-
-    /* ----- STATS ROW ----- */
-    .stats-row {
-      background: var(--navy);
-      padding: 52px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    @media (min-width: 720px) {
-      .stats-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 800;
-      color: var(--green-light);
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.55);
-      margin-top: 8px;
-      line-height: 1.4;
-    }
-
-    /* ----- PROCESS SECTION ----- */
-    #process { background: var(--cream); }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 48px;
-    }
-
-    @media (min-width: 640px) {
-      .process-steps { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (min-width: 1000px) {
-      .process-steps { grid-template-columns: repeat(5, 1fr); }
-    }
-
-    .process-step {
-      padding: 26px 22px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .process-num {
-      width: 48px;
-      height: 48px;
-      background: var(--navy);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: var(--green-light);
-      flex-shrink: 0;
-    }
-
-    .process-icon {
-      font-size: 1.5rem;
-    }
-
-    .process-step-title {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .process-step-desc {
-      font-size: 0.86rem;
-      color: var(--gray-500);
-      line-height: 1.6;
-    }
-
-    /* Connector line (desktop only) */
-    @media (min-width: 1000px) {
-      .process-steps {
-        position: relative;
-      }
-      .process-steps::before {
-        content: '';
-        position: absolute;
-        top: 49px;
-        left: 13%;
-        right: 13%;
-        height: 2px;
-        background: linear-gradient(90deg, var(--green), var(--green-dark));
-        opacity: 0.25;
-        pointer-events: none;
-      }
-    }
-
-    /* ----- TRUST POINTS SECTION ----- */
-    #trust { background: var(--navy); }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 48px;
-    }
-
-    @media (min-width: 580px) { .trust-grid { grid-template-columns: 1fr 1fr; } }
-
-    .trust-card {
-      padding: 26px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .trust-card-icon {
-      font-size: 1.6rem;
-    }
-
-    .trust-card-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .trust-card-desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.65;
-    }
-
-    /* ----- OWNER SECTION ----- */
-    #owner { background: var(--gray-100); }
-
-    .owner-split {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    @media (min-width: 820px) {
-      .owner-split { grid-template-columns: auto 1fr; }
-    }
-
-    /* REPLACE: Replace this with a real photo of the business owner */
-    .owner-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1d3a66, #3ea84a);
-      box-shadow: var(--shadow-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
-      flex-shrink: 0;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 820px) {
-      .owner-photo { margin: 0; }
-    }
-
-    .owner-name {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 3px;
-    }
-
-    .owner-title {
-      font-family: var(--font-display);
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--green-dark);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .owner-bio p {
-      font-size: 0.97rem;
-      color: var(--gray-600);
-      line-height: 1.75;
-      margin-bottom: 14px;
-    }
-
-    .owner-bio p:last-child { margin-bottom: 0; }
-  </style>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
 </head>
 
 <body>
@@ -292,264 +24,164 @@
      HEADER / NAV
 ================================================================ -->
 <header class="site-header" id="top">
-  <nav class="nav-inner" aria-label="Main navigation">
+  <div class="mobile-action-bar" aria-label="Quick actions">
+    <a href="contact.html" class="mobile-action-btn mobile-action-primary">Request Service</a>
+    <a href="tel:+17123219644" class="mobile-action-btn mobile-action-call">Call 712-321-9644</a>
+  </div>
 
-    <!-- REPLACE: Swap text/icon with your real logo image -->
-    <a href="index.html" class="nav-logo" aria-label="Your HVAC Company — Home">
-      <span class="nav-logo-mark" aria-hidden="true">❄</span>
-      <span class="nav-logo-text">Your <span>HVAC</span></span>
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Harmons Heating & Air home">
+      <picture>
+        <source srcset="img/small_logo.png" media="(max-width: 559px)" />
+        <img src="img/full_logo.jpg" alt="Harmons Heating & Air" class="nav-logo-img" />
+      </picture>
     </a>
 
     <ul class="nav-links" role="list">
       <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="resources.html" data-page="resources">Resources</a></li>
-      <li><a href="about.html" data-page="about">About</a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" data-page="services">
+          Services
+          <span class="nav-dropdown-caret" aria-hidden="true">v</span>
+        </button>
+        <div class="nav-dropdown-menu compact" role="menu">
+          <a href="index.html#cooling" role="menuitem">Cooling</a>
+          <a href="index.html#heating" role="menuitem">Heating</a>
+        </div>
+      </li>
+
+      <li class="nav-dropdown about-dropdown">
+        <a href="about.html" class="nav-dropdown-link" data-page="about">
+          About
+          <span class="nav-dropdown-caret" aria-hidden="true">v</span>
+        </a>
+        <div class="nav-dropdown-menu compact" role="menu">
+          <a href="resources.html#faq" role="menuitem">FAQ</a>
+          <a href="resources.html#financing" role="menuitem">Financing</a>
+        </div>
+      </li>
+
     </ul>
 
     <div class="nav-right">
-      <!-- REPLACE: Update with your real phone number -->
-      <a href="tel:+15551234567" class="nav-phone">📞 (555) 123-4567</a>
+      <a href="tel:+17123219644" class="nav-phone">Call 712-321-9644</a>
       <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
     </div>
 
     <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
   </nav>
 </header>
 
 <!-- Mobile drawer -->
 <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
   <a href="index.html" data-page="index">Home</a>
-  <a href="resources.html" data-page="resources">Resources</a>
+
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false" data-page="services">
+      Services
+      <span aria-hidden="true">v</span>
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="index.html#cooling">Cooling</a>
+      <a href="index.html#heating">Heating</a>
+    </div>
+  </div>
+
   <a href="about.html" data-page="about">About</a>
-  <!-- REPLACE: Update with your real phone number -->
-  <a href="tel:+15551234567" class="mobile-drawer-phone">📞 (555) 123-4567</a>
+  <a href="resources.html#faq" data-page="about">FAQ</a>
+  <a href="resources.html#financing" data-page="about">Financing</a>
+  <a href="tel:+17123219644" class="mobile-drawer-phone">Call 712-321-9644</a>
   <a href="contact.html" class="btn btn-primary mobile-drawer-cta">Request Service</a>
 </nav>
 
 
 <main>
 
-  <!-- ================================================================
-       PAGE HERO
-  ================================================================ -->
   <div class="page-hero">
     <div class="page-hero-dots" aria-hidden="true"></div>
     <div class="container page-hero-inner">
-      <p class="page-hero-label">Iowa Heating &amp; Air Conditioning</p>
-      <h1 class="page-hero-title">About Our Company</h1>
-      <p class="page-hero-sub">We're a local Iowa HVAC business built on honest service, clear communication, and work we stand behind. Here's a little about who we are.</p>
+      <p class="page-hero-label">About Harmons Heating &amp; Air</p>
+      <h1 class="page-hero-title">Local, Licensed, Family-Owned HVAC Service</h1>
+      <p class="page-hero-sub">Serving homeowners in Cherokee and the surrounding areas with heating, cooling, maintenance, and indoor comfort solutions.</p>
     </div>
   </div>
 
-
-  <!-- ================================================================
-       COMPANY STORY
-  ================================================================ -->
   <section id="story">
     <div class="container">
       <div class="story-split">
-
-        <!-- Photo -->
-        <!-- REPLACE: Replace gradient with a real photo of the owner, team, or job site -->
-        <div class="story-photo reveal" role="img" aria-label="Owner or team photo placeholder">
+        <div class="story-photo has-img reveal" role="img" aria-label="Harmons Heating and Air service van">
+          <img src="img/van-shawn.webp" alt="Harmons Heating and Air service van" />
           <div class="story-photo-badge">
-            <div class="story-photo-stat">20+</div>
-            <div class="story-photo-label">Years Serving Iowa</div>
+            <div class="story-photo-stat">2004</div>
+            <div class="story-photo-label">Serving Since</div>
           </div>
         </div>
-
-        <!-- Text -->
         <div class="reveal">
           <p class="section-label">Our Story</p>
-          <h2 class="section-title">Local Service, Honest Work</h2>
+          <h2 class="section-title">Comfort Solutions Without the Pushy Sales Feel</h2>
           <div class="divider"></div>
           <div class="story-text">
-            <!-- REPLACE: Update with the real company story in the owner's voice -->
-            <p>
-              We started this business with a straightforward goal: give Iowa homeowners the kind of HVAC service we'd want for our own families. That means showing up when we say we will, explaining things clearly, and doing work we're proud to put our name on.
-            </p>
-            <p>
-              Over the past 20+ years, we've worked on just about every type of heating and cooling situation a home can present. That experience matters — not just for the technical side of things, but for helping homeowners understand what's really going on with their system and what actually makes sense to do about it.
-            </p>
-            <p>
-              We're not a large company, and that's by choice. Staying focused on residential work in Iowa means we can give each job the attention it deserves and build real relationships with the families we serve.
-            </p>
+            <p>Harmons Heating &amp; Air is a local, licensed, family-owned HVAC company serving homeowners in Cherokee and the surrounding areas.</p>
+            <p>Every job is handled or supervised by a certified technician, so homeowners can count on knowledgeable service, honest guidance, and quality workmanship. Whether you need heating repair, AC replacement, general maintenance, or help finding the right indoor comfort solution, Harmons is ready to help.</p>
+            <p>We focus on reliable, cost-effective, and lasting solutions for home comfort problems. Work may be backed by a satisfaction guarantee and warranty options up to 10 years, depending on the job and equipment.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       STATS ROW
-  ================================================================ -->
   <div class="stats-row">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item reveal">
-          <div class="stat-num">20+</div>
-          <div class="stat-label">Years in Business</div>
-        </div>
-        <div class="stat-item reveal reveal-delay-1">
-          <!-- REPLACE: Update with a real number if you have one -->
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Homeowners Served</div>
-        </div>
-        <div class="stat-item reveal reveal-delay-2">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Residential Focus</div>
-        </div>
-        <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-num">Iowa</div>
-          <div class="stat-label">Locally Owned &amp; Operated</div>
-        </div>
+        <div class="stat-item reveal"><div class="stat-num">20+</div><div class="stat-label">Years of Experience</div></div>
+        <div class="stat-item reveal reveal-delay-1"><div class="stat-num">5.0</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat-item reveal reveal-delay-2"><div class="stat-num">24/7</div><div class="stat-label">Emergency Service Available</div></div>
+        <div class="stat-item reveal reveal-delay-3"><div class="stat-num">IA</div><div class="stat-label">Cherokee Area</div></div>
       </div>
     </div>
   </div>
 
-
-  <!-- ================================================================
-       OWNER / TEAM
-  ================================================================ -->
-  <section id="owner">
-    <div class="container">
-      <div class="owner-split">
-
-        <!-- REPLACE: Replace emoji placeholder with a real headshot of the owner -->
-        <!-- <img src="owner-photo.jpg" alt="[Owner Name], Owner of Your HVAC Company" class="owner-photo"> -->
-        <div class="owner-photo reveal" role="img" aria-label="Owner headshot placeholder">👨‍🔧</div>
-
-        <div class="reveal">
-          <!-- REPLACE: Update with the owner's real name -->
-          <div class="owner-name">[Owner Name]</div>
-          <!-- REPLACE: Update with the owner's real title/role -->
-          <div class="owner-title">Owner &amp; Lead Technician</div>
-          <div class="owner-bio">
-            <!-- REPLACE: Update with the owner's real background and story -->
-            <p>
-              With over 20 years of hands-on experience in the HVAC industry, I started this company to offer Iowa homeowners something I felt was missing: a service provider who communicates clearly, gives honest advice, and takes real pride in the work.
-            </p>
-            <p>
-              I work directly on many of the jobs we take on, which means you're getting experience and accountability on every visit — not just a dispatch crew following a checklist.
-            </p>
-            <p>
-              When you reach out to us, you're talking to someone who genuinely wants to help your home be comfortable and your system to run well. That's the standard I hold myself and this company to.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================
-       OUR PROCESS
-  ================================================================ -->
   <section id="process">
     <div class="container">
       <div class="reveal">
         <p class="section-label">How We Work</p>
-        <h2 class="section-title">Our Process</h2>
+        <h2 class="section-title">Simple, Clear, Homeowner-Focused</h2>
         <div class="divider"></div>
-        <p class="section-sub">Every job follows the same five-step process — because consistency is how we deliver results you can count on.</p>
+        <p class="section-sub">The goal is to understand the issue, explain the options, and complete the work with care.</p>
       </div>
       <div class="process-steps">
-
-        <div class="process-step card reveal reveal-delay-1">
-          <div class="process-num">1</div>
-          <div class="process-icon" aria-hidden="true">👂</div>
-          <h3 class="process-step-title">Listen</h3>
-          <p class="process-step-desc">We start by listening to what you've noticed — no assumptions, just a real conversation about your home's situation.</p>
-        </div>
-
-        <div class="process-step card reveal reveal-delay-2">
-          <div class="process-num">2</div>
-          <div class="process-icon" aria-hidden="true">🔍</div>
-          <h3 class="process-step-title">Inspect</h3>
-          <p class="process-step-desc">We do a thorough inspection of the system — identifying the root cause, not just the symptom.</p>
-        </div>
-
-        <div class="process-step card reveal reveal-delay-3">
-          <div class="process-num">3</div>
-          <div class="process-icon" aria-hidden="true">💬</div>
-          <h3 class="process-step-title">Explain</h3>
-          <p class="process-step-desc">We explain what we found, what it means, and what your options are — in plain language, before anything is done.</p>
-        </div>
-
-        <div class="process-step card reveal reveal-delay-4">
-          <div class="process-num">4</div>
-          <div class="process-icon" aria-hidden="true">🔧</div>
-          <h3 class="process-step-title">Complete</h3>
-          <p class="process-step-desc">We do the work properly, efficiently, and with respect for your home and time.</p>
-        </div>
-
-        <div class="process-step card reveal reveal-delay-5">
-          <div class="process-num">5</div>
-          <div class="process-icon" aria-hidden="true">🛡</div>
-          <h3 class="process-step-title">Stand Behind It</h3>
-          <p class="process-step-desc">The job isn't done until you're confident the system is working. And our warranty backs every job we complete.</p>
-        </div>
-
+        <div class="process-step card reveal reveal-delay-1"><div class="process-num">1</div><h3 class="process-step-title">Understand</h3><p class="process-step-desc">We start with what you are noticing in your home.</p></div>
+        <div class="process-step card reveal reveal-delay-2"><div class="process-num">2</div><h3 class="process-step-title">Inspect</h3><p class="process-step-desc">The system is checked so the root issue is understood.</p></div>
+        <div class="process-step card reveal reveal-delay-3"><div class="process-num">3</div><h3 class="process-step-title">Explain</h3><p class="process-step-desc">You get plain-language options before work begins.</p></div>
+        <div class="process-step card reveal reveal-delay-4"><div class="process-num">4</div><h3 class="process-step-title">Complete</h3><p class="process-step-desc">The work is completed with respect for your home.</p></div>
+        <div class="process-step card reveal reveal-delay-5"><div class="process-num">5</div><h3 class="process-step-title">Stand Behind It</h3><p class="process-step-desc">Warranty and satisfaction details are explained clearly.</p></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       TRUST POINTS
-  ================================================================ -->
   <section id="trust" class="section-dark">
     <div class="container">
       <div class="reveal">
         <p class="section-label">What We Stand For</p>
         <h2 class="section-title light">Honest Service, Every Time</h2>
         <div class="divider"></div>
-        <p class="section-sub light">These aren't marketing slogans — they're the commitments we make to every homeowner we work with.</p>
       </div>
       <div class="trust-grid">
-
-        <div class="trust-card card-dark reveal reveal-delay-1">
-          <div class="trust-card-icon" aria-hidden="true">💬</div>
-          <h3 class="trust-card-title">Clear Communication Throughout</h3>
-          <p class="trust-card-desc">We keep you informed at every step. You'll always know what we found, what we're doing, and why — before we do it.</p>
-        </div>
-
-        <div class="trust-card card-dark reveal reveal-delay-2">
-          <div class="trust-card-icon" aria-hidden="true">⚖️</div>
-          <h3 class="trust-card-title">Honest Repair vs. Replace Guidance</h3>
-          <p class="trust-card-desc">We'll give you a straight answer on whether a repair makes sense or if a new system is the better investment for your home.</p>
-        </div>
-
-        <div class="trust-card card-dark reveal reveal-delay-3">
-          <div class="trust-card-icon" aria-hidden="true">🛡</div>
-          <h3 class="trust-card-title">Warranty Details Before Work Starts</h3>
-          <p class="trust-card-desc">We explain your warranty coverage upfront, in plain language, so there are no surprises after the job is done.</p>
-        </div>
-
-        <div class="trust-card card-dark reveal reveal-delay-4">
-          <div class="trust-card-icon" aria-hidden="true">🏠</div>
-          <h3 class="trust-card-title">Homeowner-Focused, Always</h3>
-          <p class="trust-card-desc">Every process we have is built around serving residential homeowners — not commercial clients, not developers, just families like yours.</p>
-        </div>
-
+        <div class="trust-card card-dark reveal reveal-delay-1"><div class="trust-card-icon" aria-hidden="true">🏠</div><h3 class="trust-card-title">Family-Owned</h3><p class="trust-card-desc">Local service with a personal, homeowner-first approach.</p></div>
+        <div class="trust-card card-dark reveal reveal-delay-2"><div class="trust-card-icon" aria-hidden="true">🧰</div><h3 class="trust-card-title">Certified Oversight</h3><p class="trust-card-desc">Every job is handled or supervised by a certified technician.</p></div>
+        <div class="trust-card card-dark reveal reveal-delay-3"><div class="trust-card-icon" aria-hidden="true">⚖️</div><h3 class="trust-card-title">No-Pressure Guidance</h3><p class="trust-card-desc">Repair and replacement options are explained clearly.</p></div>
+        <div class="trust-card card-dark reveal reveal-delay-4"><div class="trust-card-icon" aria-hidden="true">🛡</div><h3 class="trust-card-title">Warranty Options</h3><p class="trust-card-desc">Coverage depends on the specific job and equipment.</p></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       ABOUT CTA
-  ================================================================ -->
   <div class="cta-banner">
     <div class="container cta-banner-inner reveal">
-      <h2 class="cta-banner-title">Ready to work with a company you can trust?</h2>
-      <p class="cta-banner-sub">Tell us about your heating or air conditioning situation and we'll follow up to discuss your options.</p>
+      <h2 class="cta-banner-title">Ready to talk about your home comfort?</h2>
+      <p class="cta-banner-sub">Tell us what is going on and we will help you understand the next step.</p>
       <a href="contact.html" class="btn btn-primary btn-lg">Request Service</a>
     </div>
   </div>
@@ -565,29 +197,25 @@
     <div class="footer-grid">
 
       <div>
-        <!-- REPLACE: Swap with your real business logo -->
-        <a href="index.html" class="footer-logo" aria-label="Your HVAC Company Home">
-          <span class="footer-logo-mark" aria-hidden="true">❄</span>
-          Your HVAC Company
+        <a href="index.html" class="footer-logo" aria-label="Harmons Heating & Air home">
+          <img src="img/small_logo.png" alt="" class="footer-logo-img" aria-hidden="true" />
+          <span>Harmons Heating & Air</span>
         </a>
-        <p class="footer-tagline">Reliable heating and air conditioning for Iowa homeowners. Backed by 20+ years of experience.</p>
+        <p class="footer-tagline">Local, licensed, family-owned heating and cooling service for homeowners in Cherokee and the surrounding areas.</p>
         <div class="footer-contact-list">
-          <!-- REPLACE: Update with your real phone number -->
-          <div class="footer-contact-item">📞 <a href="tel:+15551234567">(555) 123-4567</a></div>
-          <!-- REPLACE: Update with your real email -->
-          <div class="footer-contact-item">✉ <a href="mailto:hello@yourhvaccompany.com">hello@yourhvaccompany.com</a></div>
-          <!-- REPLACE: Update with your actual service area -->
-          <div class="footer-contact-item">📍 Serving homeowners across Iowa</div>
+          <div class="footer-contact-item">📞 <a href="tel:+17123219644">712-321-9644</a></div>
+          <div class="footer-contact-item">📍 605 W Cedar St, Cherokee, IA 51012</div>
+          <div class="footer-contact-item">🕒 Mon–Fri 8:00 AM–5:00 PM · Emergency service available</div>
         </div>
       </div>
 
       <div>
         <div class="footer-col-label">Services</div>
         <ul class="footer-links-list" role="list">
-          <li><a href="index.html#services">Heating Repair</a></li>
-          <li><a href="index.html#services">AC Repair</a></li>
-          <li><a href="index.html#services">System Replacement</a></li>
-          <li><a href="index.html#services">Preventive Maintenance</a></li>
+          <li><a href="index.html#cooling">Cooling</a></li>
+          <li><a href="index.html#heating">Heating</a></li>
+          <li><a href="index.html#services">Maintenance</a></li>
+          <li><a href="resources.html#financing">Financing</a></li>
         </ul>
       </div>
 
@@ -595,10 +223,9 @@
         <div class="footer-col-label">Company</div>
         <ul class="footer-links-list" role="list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="resources.html">Resources &amp; Blog</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="index.html#warranty">Warranty</a></li>
-          <li><a href="index.html#financing">Financing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html#faq">FAQ</a></li>
+          <li><a href="resources.html#financing">Financing</a></li>
           <li><a href="contact.html">Request Service</a></li>
         </ul>
       </div>
@@ -607,21 +234,26 @@
         <div class="footer-col-label">Get in Touch</div>
         <ul class="footer-links-list" role="list">
           <li><a href="contact.html">Request Service</a></li>
-          <!-- REPLACE: Update phone and email -->
-          <li><a href="tel:+15551234567">Call Us</a></li>
-          <li><a href="mailto:hello@yourhvaccompany.com">Email Us</a></li>
+          <li><a href="tel:+17123219644">Call 712-321-9644</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=605%20W%20Cedar%20St%2C%20Cherokee%2C%20IA%2051012">Get Directions</a></li>
         </ul>
       </div>
 
     </div>
     <div class="footer-bottom">
-      <!-- REPLACE: Update year and business name -->
-      <p class="footer-copy">&copy; 2024 Your HVAC Company. All rights reserved.</p>
-      <p class="footer-copy">Serving Iowa homeowners with honest HVAC service.</p>
+      <p class="footer-copy">&copy; 2026 Harmons Heating & Air. All rights reserved.</p>
+      <p class="footer-copy">Serving Cherokee, Iowa and nearby communities.</p>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

@@ -4,159 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- REPLACE: Update with your real business name -->
-  <title>Resources & Blog | Your HVAC Company — Iowa Homeowner HVAC Tips</title>
+  <title>FAQ & Financing | Harmons Heating & Air</title>
   <!-- REPLACE: Update with your real meta description -->
-  <meta name="description" content="HVAC tips, homeowner guides, and service information from Your HVAC Company in Iowa. Learn when to repair vs. replace, how to maintain your system, and more." />
+  <meta name="description" content="Common HVAC questions, warranty notes, and financing information from Harmons Heating & Air in Cherokee, Iowa." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* ---- Resources page background ---- */
-    #resources-main {
-      background: var(--gray-100);
-      /* Extra bottom padding so it doesn't feel cramped */
-      padding-bottom: 100px;
-    }
-
-    /* ---- Featured article (first card, full-width on desktop) ---- */
-    .resource-card.featured {
-      grid-column: 1 / -1;
-      flex-direction: row;
-    }
-
-    .resource-card.featured .resource-thumb {
-      width: 42%;
-      aspect-ratio: auto;
-      flex-shrink: 0;
-      min-height: 220px;
-    }
-
-    .resource-card.featured .resource-body {
-      padding: 28px 28px 26px;
-      justify-content: center;
-    }
-
-    .resource-card.featured .resource-title {
-      font-size: 1.15rem;
-    }
-
-    @media (max-width: 640px) {
-      .resource-card.featured {
-        flex-direction: column;
-      }
-      .resource-card.featured .resource-thumb {
-        width: 100%;
-        aspect-ratio: 16/9;
-        min-height: unset;
-      }
-    }
-
-    /* ---- Resource count label ---- */
-    .resources-count {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      color: var(--gray-400);
-      margin-bottom: 4px;
-    }
-
-    /* ---- Sidebar CTA card (desktop) ---- */
-    .resources-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: flex-start;
-    }
-
-    @media (min-width: 1000px) {
-      .resources-layout {
-        grid-template-columns: 1fr 280px;
-      }
-    }
-
-    .resources-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    @media (min-width: 1000px) {
-      .resources-sidebar {
-        position: sticky;
-        top: calc(var(--nav-h) + 20px);
-      }
-    }
-
-    .sidebar-cta-card {
-      background: var(--navy);
-      border-radius: var(--r-lg);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .sidebar-cta-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.3;
-    }
-
-    .sidebar-cta-sub {
-      font-size: 0.87rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-    }
-
-    .sidebar-topics {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--r-md);
-      padding: 20px 20px 16px;
-      box-shadow: var(--shadow-xs);
-    }
-
-    .sidebar-topics-title {
-      font-family: var(--font-display);
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .sidebar-topic-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .sidebar-topic-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--gray-100);
-      font-family: var(--font-display);
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: var(--gray-600);
-      cursor: pointer;
-      transition: color var(--t-fast);
-    }
-
-    .sidebar-topic-item:last-child { border-bottom: none; }
-    .sidebar-topic-item:hover { color: var(--navy); }
-
-    .sidebar-topic-count {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--gray-300);
-    }
-  </style>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
 </head>
 
 <body>
@@ -165,323 +24,151 @@
      HEADER / NAV
 ================================================================ -->
 <header class="site-header" id="top">
-  <nav class="nav-inner" aria-label="Main navigation">
+  <div class="mobile-action-bar" aria-label="Quick actions">
+    <a href="contact.html" class="mobile-action-btn mobile-action-primary">Request Service</a>
+    <a href="tel:+17123219644" class="mobile-action-btn mobile-action-call">Call 712-321-9644</a>
+  </div>
 
-    <!-- REPLACE: Swap text/icon with your real logo image -->
-    <!-- Example: <a href="index.html"><img src="logo.png" alt="Your HVAC Company Logo" style="height:38px;"></a> -->
-    <a href="index.html" class="nav-logo" aria-label="Your HVAC Company — Home">
-      <span class="nav-logo-mark" aria-hidden="true">❄</span>
-      <span class="nav-logo-text">Your <span>HVAC</span></span>
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Harmons Heating & Air home">
+      <picture>
+        <source srcset="img/small_logo.png" media="(max-width: 559px)" />
+        <img src="img/full_logo.jpg" alt="Harmons Heating & Air" class="nav-logo-img" />
+      </picture>
     </a>
 
     <ul class="nav-links" role="list">
       <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="resources.html" data-page="resources">Resources</a></li>
-      <li><a href="about.html" data-page="about">About</a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" data-page="services">
+          Services
+          <span class="nav-dropdown-caret" aria-hidden="true">v</span>
+        </button>
+        <div class="nav-dropdown-menu compact" role="menu">
+          <a href="index.html#cooling" role="menuitem">Cooling</a>
+          <a href="index.html#heating" role="menuitem">Heating</a>
+        </div>
+      </li>
+
+      <li class="nav-dropdown about-dropdown">
+        <a href="about.html" class="nav-dropdown-link" data-page="about">
+          About
+          <span class="nav-dropdown-caret" aria-hidden="true">v</span>
+        </a>
+        <div class="nav-dropdown-menu compact" role="menu">
+          <a href="resources.html#faq" role="menuitem">FAQ</a>
+          <a href="resources.html#financing" role="menuitem">Financing</a>
+        </div>
+      </li>
+
     </ul>
 
     <div class="nav-right">
-      <!-- REPLACE: Update with your real phone number -->
-      <a href="tel:+15551234567" class="nav-phone">📞 (555) 123-4567</a>
+      <a href="tel:+17123219644" class="nav-phone">Call 712-321-9644</a>
       <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
     </div>
 
     <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
   </nav>
 </header>
 
 <!-- Mobile drawer -->
 <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
   <a href="index.html" data-page="index">Home</a>
-  <a href="resources.html" data-page="resources">Resources</a>
+
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false" data-page="services">
+      Services
+      <span aria-hidden="true">v</span>
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="index.html#cooling">Cooling</a>
+      <a href="index.html#heating">Heating</a>
+    </div>
+  </div>
+
   <a href="about.html" data-page="about">About</a>
-  <!-- REPLACE: Update with your real phone number -->
-  <a href="tel:+15551234567" class="mobile-drawer-phone">📞 (555) 123-4567</a>
+  <a href="resources.html#faq" data-page="about">FAQ</a>
+  <a href="resources.html#financing" data-page="about">Financing</a>
+  <a href="tel:+17123219644" class="mobile-drawer-phone">Call 712-321-9644</a>
   <a href="contact.html" class="btn btn-primary mobile-drawer-cta">Request Service</a>
 </nav>
 
 
 <main>
 
-  <!-- ================================================================
-       PAGE HERO
-  ================================================================ -->
   <div class="page-hero">
     <div class="page-hero-dots" aria-hidden="true"></div>
     <div class="container page-hero-inner">
-      <p class="page-hero-label">Iowa HVAC Knowledge Base</p>
-      <h1 class="page-hero-title">Resources &amp; Blog</h1>
-      <p class="page-hero-sub">
-        Helpful HVAC tips, homeowner guides, service explanations, and industry information — written to help Iowa homeowners make confident decisions about their heating and cooling systems.
-      </p>
+      <p class="page-hero-label">FAQ &amp; Financing</p>
+      <h1 class="page-hero-title">Quick Answers Before You Call</h1>
+      <p class="page-hero-sub">A shorter page for common questions, warranty expectations, and financing information. More homeowner resources can be added later.</p>
     </div>
   </div>
 
-
-  <!-- ================================================================
-       RESOURCES MAIN CONTENT
-       Cards use data-category for JS filtering.
-       Available categories: heating, air-conditioning, maintenance,
-       replacement, homeowner-tips
-
-       TO ADD A NEW POST: Copy a .resource-card block, update the
-       data-category, tag, title, excerpt, and href, and add a real
-       thumbnail image. See the comment on each card for guidance.
-
-       REPLACE: All "Read Article" hrefs point to # for now.
-       Update each href to the real article URL when published.
-  ================================================================ -->
-  <section id="resources-main">
+  <section id="faq" class="faq-financing-main">
     <div class="container">
-      <div class="resources-layout">
-
-        <!-- ---- Main content area ---- -->
+      <div class="faq-financing-layout">
         <div>
-
-          <!-- Filter bar -->
-          <div class="filter-bar" role="group" aria-label="Filter resources by category">
-            <button class="filter-chip active" data-filter="all">All</button>
-            <button class="filter-chip" data-filter="heating">Heating</button>
-            <button class="filter-chip" data-filter="air-conditioning">Air Conditioning</button>
-            <button class="filter-chip" data-filter="maintenance">Maintenance</button>
-            <button class="filter-chip" data-filter="replacement">Replacement</button>
-            <button class="filter-chip" data-filter="homeowner-tips">Homeowner Tips</button>
+          <div class="reveal">
+            <p class="section-label">Common Questions</p>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="divider"></div>
           </div>
 
-          <!-- Resource card grid -->
-          <div class="resources-grid">
-
-            <!-- ============================================================
-                 CARD 1 — Featured / Repair vs Replace
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card featured reveal" data-category="air-conditioning,replacement">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: a photo of an HVAC system or a homeowner in discussion.
-                     Example: <img src="images/article-repair-replace.jpg" alt="Homeowner discussing HVAC options with technician"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">❄️</span>
-                  <span>Photo: HVAC technician / homeowner</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Air Conditioning</span>
-                <h2 class="resource-title">Repair vs. Replace: How to Think About an Older HVAC System</h2>
-                <p class="resource-excerpt">
-                  When your system starts acting up, the repair-vs-replace question can feel overwhelming. This guide walks through the key factors — age, efficiency, repair cost, and long-term value — so you can make a confident decision.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: Repair vs. Replace — How to Think About an Older HVAC System">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 CARD 2 — Maintenance Tips
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card reveal reveal-delay-1" data-category="maintenance,homeowner-tips">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: homeowner replacing an air filter or checking a vent.
-                     Example: <img src="images/article-maintenance.jpg" alt="Homeowner replacing HVAC air filter"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">🔧</span>
-                  <span>Photo: Air filter / maintenance</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Maintenance</span>
-                <h2 class="resource-title">Simple HVAC Maintenance Tips for Homeowners</h2>
-                <p class="resource-excerpt">
-                  You don't need to be a technician to keep your system in good shape. A few simple habits — done consistently — can extend the life of your equipment and reduce the chance of unexpected breakdowns.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: Simple HVAC Maintenance Tips for Homeowners">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 CARD 3 — Furnace blowing cold air
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card reveal reveal-delay-2" data-category="heating">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: close-up of a furnace, thermostat, or heating vent.
-                     Example: <img src="images/article-furnace-cold.jpg" alt="Home thermostat set to heating mode"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">🔥</span>
-                  <span>Photo: Furnace / thermostat</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Heating</span>
-                <h2 class="resource-title">Why Is My Furnace Blowing Cold Air?</h2>
-                <p class="resource-excerpt">
-                  If your furnace is running but the air coming out feels cold, there are a handful of common causes — some you can address yourself, and some that warrant a service call. Here's how to diagnose the issue.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: Why Is My Furnace Blowing Cold Air?">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 CARD 4 — Air filter replacement frequency
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card reveal reveal-delay-3" data-category="maintenance,homeowner-tips">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: a dirty vs. clean air filter comparison, or a filter being installed.
-                     Example: <img src="images/article-air-filter.jpg" alt="Old and new HVAC air filters side by side"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">🏠</span>
-                  <span>Photo: Air filter comparison</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Homeowner Tips</span>
-                <h2 class="resource-title">How Often Should You Replace Your Air Filter?</h2>
-                <p class="resource-excerpt">
-                  Changing your air filter is one of the easiest ways to protect your HVAC system — but the right frequency depends on your home, your system, and your lifestyle. Here's a simple guide.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: How Often Should You Replace Your Air Filter?">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 CARD 5 — What to know before AC replacement
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card reveal reveal-delay-1" data-category="air-conditioning,replacement">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: a new outdoor AC unit being installed, or a technician reviewing options with homeowner.
-                     Example: <img src="images/article-ac-replacement.jpg" alt="New outdoor AC unit installed at Iowa home"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">❄️</span>
-                  <span>Photo: AC unit / installation</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Replacement</span>
-                <h2 class="resource-title">What to Know Before Replacing an AC System</h2>
-                <p class="resource-excerpt">
-                  Replacing an air conditioning system is a significant investment. Before you commit, there are a few important things to understand — including sizing, efficiency ratings, and what to ask your HVAC contractor.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: What to Know Before Replacing an AC System">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 CARD 6 — Warranty and financing planning
-                 REPLACE: Update href, thumbnail, tag, title, excerpt as needed
-            ============================================================ -->
-            <article class="resource-card reveal reveal-delay-2" data-category="homeowner-tips">
-              <div class="resource-thumb">
-                <!-- REPLACE: Add a real article thumbnail image here.
-                     Suggested: a homeowner reviewing paperwork, or a calm, tidy living room.
-                     Example: <img src="images/article-warranty-financing.jpg" alt="Homeowner reviewing HVAC service agreement"> -->
-                <div class="img-placeholder">
-                  <span class="img-placeholder-icon" aria-hidden="true">🛡</span>
-                  <span>Photo: Homeowner / paperwork</span>
-                </div>
-              </div>
-              <div class="resource-body">
-                <span class="resource-tag">Homeowner Tips</span>
-                <h2 class="resource-title">How Warranty and Financing Options Can Help You Plan Ahead</h2>
-                <p class="resource-excerpt">
-                  Understanding your warranty coverage and knowing that financing is available can take a lot of stress out of HVAC decisions. Here's what Iowa homeowners should know about both.
-                </p>
-                <!-- REPLACE: Update href to the real article URL when published -->
-                <a href="#" class="resource-read-more" aria-label="Read: How Warranty and Financing Options Can Help You Plan Ahead">Read Article →</a>
-              </div>
-            </article>
-
-            <!-- Empty state: shown when a filter has no matching cards -->
-            <div class="resources-empty" role="status" aria-live="polite">
-              No articles in this category yet. Check back soon, or <a href="contact.html" style="color: var(--green-dark); font-weight: 600;">contact us directly</a> with your question.
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Do you offer financing?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+              <div class="faq-body" role="region"><div class="faq-body-inner">Yes. Financing may be available for qualifying homeowners, especially for larger repairs or system replacements. Terms depend on the provider and customer eligibility, so ask about current options when you request service.</div></div>
             </div>
-
-          </div><!-- /resources-grid -->
-
-          <!-- Future posts note -->
-          <!-- REPLACE: Remove this note once the blog is live with real content -->
-          <div class="resources-more-note reveal">
-            <strong>More articles coming soon.</strong> This resource section will grow as we publish new HVAC tips, service guides, and homeowner information. Check back regularly, or <a href="contact.html" style="color: var(--navy-light); font-weight: 600; text-decoration: underline;">reach out</a> if you have a specific question.
-          </div>
-
-        </div><!-- /main content -->
-
-
-        <!-- ---- Sidebar ---- -->
-        <aside class="resources-sidebar reveal">
-
-          <!-- Service CTA card -->
-          <div class="sidebar-cta-card">
-            <div class="sidebar-cta-title">Have an HVAC question?</div>
-            <p class="sidebar-cta-sub">
-              Can't find what you're looking for? We're happy to talk through your heating or air conditioning situation directly.
-            </p>
-            <a href="contact.html" class="btn btn-primary" style="justify-content: center;">Request Service</a>
-            <!-- REPLACE: Update with your real phone number -->
-            <a href="tel:+15551234567" class="btn btn-outline-white" style="justify-content: center; font-size: 0.82rem;">📞 (555) 123-4567</a>
-          </div>
-
-          <!-- Topic breakdown -->
-          <div class="sidebar-topics">
-            <div class="sidebar-topics-title">Browse by Topic</div>
-            <div class="sidebar-topic-list">
-              <!-- These filter the cards when clicked via inline onclick —
-                   they call the same filter logic as the filter chips above -->
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'all\']').click()">
-                All Topics <span class="sidebar-topic-count">6</span>
-              </div>
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'heating\']').click()">
-                Heating <span class="sidebar-topic-count">1</span>
-              </div>
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'air-conditioning\']').click()">
-                Air Conditioning <span class="sidebar-topic-count">2</span>
-              </div>
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'maintenance\']').click()">
-                Maintenance <span class="sidebar-topic-count">2</span>
-              </div>
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'replacement\']').click()">
-                Replacement <span class="sidebar-topic-count">2</span>
-              </div>
-              <div class="sidebar-topic-item" role="button" tabindex="0" onclick="document.querySelector('[data-filter=\'homeowner-tips\']').click()">
-                Homeowner Tips <span class="sidebar-topic-count">3</span>
-              </div>
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Do repairs and installations include a warranty?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+              <div class="faq-body" role="region"><div class="faq-body-inner">Warranty coverage may be available depending on the job, parts, and equipment. Some work may qualify for warranty options up to 10 years. Confirm details before work begins.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Do you repair and replace both heating and cooling systems?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+              <div class="faq-body" role="region"><div class="faq-body-inner">Yes. Harmons Heating &amp; Air helps with heating repair, AC repair, system replacement, maintenance, and indoor comfort solutions for homeowners.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Are you available for urgent issues?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+              <div class="faq-body" role="region"><div class="faq-body-inner">The business listing shows Harmons Heating and Air as open 24 hours. For urgent heating or cooling issues, call directly at <a href="tel:+17123219644" style="color: var(--green-dark); font-weight: 700;">712-321-9644</a>.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false"><span class="faq-question">What areas do you serve?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+              <div class="faq-body" role="region"><div class="faq-body-inner">Harmons Heating &amp; Air serves homeowners in Cherokee, Iowa and the surrounding areas. Include your city when requesting service so coverage can be confirmed.</div></div>
             </div>
           </div>
+        </div>
 
-          <!-- Trust note -->
-          <div style="background: var(--green-faint); border: 1px solid rgba(62,168,74,0.18); border-radius: var(--r-md); padding: 18px 18px; font-size: 0.85rem; color: var(--gray-600); line-height: 1.65;">
-            <strong style="display:block; font-family: var(--font-display); font-size: 0.82rem; color: var(--navy); margin-bottom: 5px;">Written for Iowa homeowners</strong>
-            All articles are written with residential homeowners in mind — not contractors or technical audiences. Plain language, practical guidance.
+        <aside id="financing" class="financing-side-card reveal reveal-delay-2">
+          <img src="img/ac-unit-outside.webp" alt="Outdoor HVAC unit installed outside a home" />
+          <div class="financing-side-body">
+            <p class="section-label">Financing</p>
+            <h2>Payment Options for Bigger Jobs</h2>
+            <p>Unexpected HVAC repairs and replacements can be stressful. Ask about financing options when you request service.</p>
+            <ul class="service-list">
+              <li>For qualifying homeowners</li>
+              <li>Useful for repairs or replacement projects</li>
+              <li>Terms depend on provider and eligibility</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">Ask About Financing</a>
           </div>
-
         </aside>
-
-      </div><!-- /resources-layout -->
+      </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       BOTTOM CTA
-  ================================================================ -->
   <div class="cta-banner">
     <div class="container cta-banner-inner reveal">
-      <h2 class="cta-banner-title">Ready to talk about your HVAC system?</h2>
-      <p class="cta-banner-sub">Articles are great, but sometimes the fastest answer is a quick conversation. We're happy to help.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">Request Service</a>
+      <h2 class="cta-banner-title">Still have questions?</h2>
+      <p class="cta-banner-sub">Call or send a request and Harmons Heating &amp; Air will help you understand your options.</p>
+      <div class="btn-group center">
+        <a href="contact.html" class="btn btn-primary btn-lg">Request Service</a>
+        <a href="tel:+17123219644" class="btn btn-outline-white btn-lg">Call 712-321-9644</a>
+      </div>
     </div>
   </div>
 
@@ -496,29 +183,25 @@
     <div class="footer-grid">
 
       <div>
-        <!-- REPLACE: Swap with your real business logo -->
-        <a href="index.html" class="footer-logo" aria-label="Your HVAC Company Home">
-          <span class="footer-logo-mark" aria-hidden="true">❄</span>
-          Your HVAC Company
+        <a href="index.html" class="footer-logo" aria-label="Harmons Heating & Air home">
+          <img src="img/small_logo.png" alt="" class="footer-logo-img" aria-hidden="true" />
+          <span>Harmons Heating & Air</span>
         </a>
-        <p class="footer-tagline">Reliable heating and air conditioning for Iowa homeowners. Backed by 20+ years of experience.</p>
+        <p class="footer-tagline">Local, licensed, family-owned heating and cooling service for homeowners in Cherokee and the surrounding areas.</p>
         <div class="footer-contact-list">
-          <!-- REPLACE: Update with your real phone number -->
-          <div class="footer-contact-item">📞 <a href="tel:+15551234567">(555) 123-4567</a></div>
-          <!-- REPLACE: Update with your real email -->
-          <div class="footer-contact-item">✉ <a href="mailto:hello@yourhvaccompany.com">hello@yourhvaccompany.com</a></div>
-          <!-- REPLACE: Update with your actual service area -->
-          <div class="footer-contact-item">📍 Serving homeowners across Iowa</div>
+          <div class="footer-contact-item">📞 <a href="tel:+17123219644">712-321-9644</a></div>
+          <div class="footer-contact-item">📍 605 W Cedar St, Cherokee, IA 51012</div>
+          <div class="footer-contact-item">🕒 Mon–Fri 8:00 AM–5:00 PM · Emergency service available</div>
         </div>
       </div>
 
       <div>
         <div class="footer-col-label">Services</div>
         <ul class="footer-links-list" role="list">
-          <li><a href="index.html#services">Heating Repair</a></li>
-          <li><a href="index.html#services">AC Repair</a></li>
-          <li><a href="index.html#services">System Replacement</a></li>
-          <li><a href="index.html#services">Preventive Maintenance</a></li>
+          <li><a href="index.html#cooling">Cooling</a></li>
+          <li><a href="index.html#heating">Heating</a></li>
+          <li><a href="index.html#services">Maintenance</a></li>
+          <li><a href="resources.html#financing">Financing</a></li>
         </ul>
       </div>
 
@@ -526,10 +209,9 @@
         <div class="footer-col-label">Company</div>
         <ul class="footer-links-list" role="list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="resources.html">Resources &amp; Blog</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="index.html#warranty">Warranty</a></li>
-          <li><a href="index.html#financing">Financing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html#faq">FAQ</a></li>
+          <li><a href="resources.html#financing">Financing</a></li>
           <li><a href="contact.html">Request Service</a></li>
         </ul>
       </div>
@@ -538,22 +220,28 @@
         <div class="footer-col-label">Get in Touch</div>
         <ul class="footer-links-list" role="list">
           <li><a href="contact.html">Request Service</a></li>
-          <!-- REPLACE: Update with your real phone number -->
-          <li><a href="tel:+15551234567">Call Us</a></li>
-          <!-- REPLACE: Update with your real email -->
-          <li><a href="mailto:hello@yourhvaccompany.com">Email Us</a></li>
+          <li><a href="tel:+17123219644">Call 712-321-9644</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=605%20W%20Cedar%20St%2C%20Cherokee%2C%20IA%2051012">Get Directions</a></li>
         </ul>
       </div>
 
     </div>
     <div class="footer-bottom">
-      <!-- REPLACE: Update year and business name -->
-      <p class="footer-copy">&copy; 2024 Your HVAC Company. All rights reserved.</p>
-      <p class="footer-copy">Serving Iowa homeowners with honest HVAC service.</p>
+      <p class="footer-copy">&copy; 2026 Harmons Heating & Air. All rights reserved.</p>
+      <p class="footer-copy">Serving Cherokee, Iowa and nearby communities.</p>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
