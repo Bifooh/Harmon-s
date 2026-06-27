@@ -175,22 +175,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------------------------------------------------------------
-     6. REQUEST SERVICE FORM (contact.html)
-     Shows a success message on submit; no real data is sent.
-     REPLACE THIS ENTIRE BLOCK with your real form handler or
-     Squarespace Form Block before going live.
+     6. CONTACT FORM (Formspree)
   --------------------------------------------------------------- */
   const serviceForm = document.getElementById('serviceForm');
-  const formSuccess = document.getElementById('formSuccess');
-  const formWrap    = document.getElementById('formFields');
 
   if (serviceForm) {
-    serviceForm.addEventListener('submit', function (e) {
+    serviceForm.noValidate = true;
+
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    const formWrap = document.getElementById('formFields');
+    const submitBtn = serviceForm.querySelector('button[type="submit"]');
+    const submitBtnText = submitBtn ? submitBtn.textContent : '';
+
+    serviceForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+
+      if (formError) formError.classList.remove('visible');
+      if (formSuccess) formSuccess.classList.remove('visible');
 
       let valid = true;
 
-      // Check required fields
       serviceForm.querySelectorAll('[required]').forEach(function (field) {
         field.classList.remove('error');
         if (!field.value.trim()) {
@@ -199,13 +204,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Email format check (optional field)
       const emailField = document.getElementById('email');
-      if (emailField && emailField.value.trim()) {
-        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRe.test(emailField.value.trim())) {
-          emailField.classList.add('error');
-          valid = false;
+      if (emailField) {
+        emailField.classList.remove('error');
+        if (emailField.value.trim()) {
+          const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRe.test(emailField.value.trim())) {
+            emailField.classList.add('error');
+            valid = false;
+          }
         }
       }
 
@@ -214,23 +221,51 @@ document.addEventListener('DOMContentLoaded', function () {
         if (firstError) {
           const top = firstError.getBoundingClientRect().top + window.scrollY - 100;
           window.scrollTo({ top, behavior: 'smooth' });
+          firstError.focus();
         }
         return;
       }
 
-      // Success: hide form, show success message
-      if (formWrap) formWrap.style.display = 'none';
-      const submitBtn = serviceForm.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.style.display = 'none';
-      if (formSuccess) {
-        formSuccess.classList.add('visible');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(serviceForm.action, {
+          method: 'POST',
+          body: new FormData(serviceForm),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Formspree submission failed');
+        }
+
+        if (formWrap) formWrap.style.display = 'none';
+        if (submitBtn) submitBtn.style.display = 'none';
+        if (formSuccess) {
+          formSuccess.classList.add('visible');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        serviceForm.reset();
+      } catch (error) {
+        if (formError) formError.classList.add('visible');
+      } finally {
+        if (submitBtn && submitBtn.style.display !== 'none') {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtnText;
+        }
       }
     });
 
-    // Clear error state on user input
     serviceForm.querySelectorAll('.form-control').forEach(function (field) {
-      field.addEventListener('input', function () { this.classList.remove('error'); });
+      field.addEventListener('input', function () {
+        this.classList.remove('error');
+        if (formError) formError.classList.remove('visible');
+      });
     });
   }
 
@@ -275,4 +310,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-

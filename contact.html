@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="styles/pages.css" />
-  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="icon" type="image/jpeg" href="img/full_logo.png" />
 </head>
 
 <body>
@@ -32,8 +32,8 @@
   <nav class="nav-inner" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="Harmons Heating & Air home">
       <picture>
-        <source srcset="img/small_logo.png" media="(max-width: 559px)" />
-        <img src="img/full_logo.jpg" alt="Harmons Heating & Air" class="nav-logo-img" />
+        <source srcset="img/full_logo.png" media="(max-width: 559px)" />
+        <img src="img/full_logo.png" alt="Harmons Heating & Air" class="nav-logo-img" />
       </picture>
     </a>
 
@@ -144,7 +144,7 @@
           <h2 class="form-card-title">Send Details About Your Project</h2>
           <p class="form-card-sub">Use this form for service questions, estimates, maintenance, financing questions, or anything you want Harmons to review before calling you back. Fields marked * are required.</p>
 
-          <form id="serviceForm" novalidate>
+          <form id="serviceForm" action="https://formspree.io/f/xwvdlzzp" method="POST">
             <div id="formFields">
               <div class="form-section-label">Your Information</div>
               <div class="form-row two">
@@ -172,6 +172,7 @@
 
             <div class="submit-wrap">
               <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+              <p class="form-error-message" id="formError" role="alert" aria-live="polite">Something went wrong. Please try again or call us directly at (712) 321-9644.</p>
               <p class="form-note">For urgent heating or cooling issues, please call directly instead of waiting for a form response.</p>
             </div>
           </form>
@@ -201,7 +202,7 @@
 
       <div>
         <a href="index.html" class="footer-logo" aria-label="Harmons Heating & Air home">
-          <img src="img/small_logo.png" alt="" class="footer-logo-img" aria-hidden="true" />
+          <img src="img/full_logo.png" alt="" class="footer-logo-img" aria-hidden="true" />
           <span>Harmons Heating & Air</span>
         </a>
         <p class="footer-tagline">Local, licensed, family-owned heating and cooling service for homeowners in Cherokee and the surrounding areas.</p>
@@ -254,10 +255,3 @@
 <script src="scripts/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
